@@ -7,8 +7,11 @@ namespace eTransport.Models
     {
         [Key]
         public int Id { get; set; }
+        [Display(Name = "Imagine")]
         public string ImagineUrl {  get; set; }
+        [Display(Name = "Nume")]
         public string Nume { get; set; }
+        [Display(Name = "Descriere")]
         public string Descriere { get; set; }
 
         //Relationships

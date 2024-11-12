@@ -11,7 +11,9 @@ namespace eTransport.Data
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
+
         {
+     
             modelBuilder.Entity<SoferiServicii>().HasKey(ss => new
             {
                 ss.SoferId,

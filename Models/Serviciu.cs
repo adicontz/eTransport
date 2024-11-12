@@ -10,9 +10,13 @@ namespace eTransport.Models
     {
         [Key]
         public int Id { get; set; }
+        [Display(Name = "Nume")]
         public string Nume { get; set; }
+        [Display(Name = "Descriere")]
         public string Descriere { get; set; }
+        [Display(Name = "Pret")]
         public double Pret { get; set; }
+        [Display(Name = "ImagineUrl")]
         public string ImagineUrl { get; set; }
         public DateTime Timp { get; set; }
         public ServiciuCategorie ServiciuCategorie { get; set; }

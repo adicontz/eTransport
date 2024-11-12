@@ -1,4 +1,5 @@
 using eTransport.Data;
+using eTransport.Data.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -25,10 +26,22 @@ namespace eTransport
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+        //    services.AddAuthentication("YourSchemeName")
+        //.AddCookie("YourSchemeName", options =>
+        //{
+        //    options.LoginPath = "/Account/Login";
+        //    options.LogoutPath = "/Account/Logout";
+        //});
             //DbContext configuration
             IServiceCollection UseSqlServer = services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnectionString")));
-            
+
+            //Service configuration
+            services.AddScoped<ISoferiServices, SoferiServices>();
+            services.AddScoped<IMarciUtilajeServices, MarciUtilajeServices>();
+
+
             services.AddControllersWithViews();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
